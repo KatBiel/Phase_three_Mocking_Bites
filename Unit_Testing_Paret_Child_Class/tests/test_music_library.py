@@ -1,6 +1,19 @@
 from lib.music_library import *
 from unittest.mock import Mock
 
+def test_tracks_empty_initially():
+    library = MusicLibrary()
+    assert library.tracks == [] 
+
+def test_add_and_list_out():
+    library = MusicLibrary()
+    track_1 = Mock()
+    track_2 = Mock()
+    track_3 = Mock()
+    library.add(track_1)
+    library.add(track_2)
+    library.add(track_3)
+    assert library.tracks == [track_1, track_2, track_3]
 
 def test_searches_by_keyword():
     library = MusicLibrary()
