@@ -5,5 +5,12 @@ class Track:
 
 
     def matches(self, keyword):
-        if self.title == keyword:
-            return True
+        return keyword.lower() in self.title.lower() or keyword.lower() in self.artist.lower()
+
+    
+    # def matches(self, keyword):
+    #     if keyword.lower() in self.title.lower():
+    #         return True
+    #     else:
+    #         if keyword.lower() in self.artist.lower():
+    #             return True
